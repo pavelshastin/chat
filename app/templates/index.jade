@@ -21,16 +21,17 @@ html(lang='ru-RU')
 
 		
 		title
-			| СТО НАВИГАТОР
+			| We chat
 body
 	script(src="./js/svg-or-png.js" type="text/javascript")
 	//include ./includes/icons.svg
 	.wrapper
 		.container
-			include ./includes/common_info
-			include ./includes/price
-			include ./includes/why
-			include ./includes/service_form
-			include ./includes/feedback
-			include ./includes/feedback_form
-			include ./includes/contacts
+			include ./includes/header
+			.content_container
+				include ./includes/left_menu_sidebar
+				include ./includes/members_list
+				include ./includes/chat_content
+				include ./includes/agenda
+			include ./includes/footer
+	//.footer

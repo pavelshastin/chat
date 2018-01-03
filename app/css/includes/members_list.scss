@@ -1,0 +1,137 @@
+﻿.members_list {
+	width: 182px;
+	margin-top: 14px;
+	margin-left: 17px;
+	background: $white;
+	padding: 11px 10px;
+	@include flex(column, nowrap, flex-start, center);
+
+	.members_list__header {
+		width: 100%;
+		@include flex(row, nowrap, space-between, center);
+
+		a.members_list__header_chat {
+			display: block;
+			line-height: 100%;
+			color: $blue;
+		}
+
+		a.members_list__header_new {
+			display: block;
+			height: 23px;
+			width: 66px;
+			border-radius: 3px;
+			background: $greyIcon;
+			line-height: 23px;
+			text-align: center;
+			color: $grey;
+		}
+
+	}
+
+
+	ul.members_list__people {
+		width: 100%;
+		font-size: 11px;
+
+		li {
+			width: 100%;
+			margin-top: 19px;
+			white-space: nowrap;
+			@include flex(row, nowrap, space-between, center);
+
+			
+			.members_list__people_avatar {
+				position: relative;
+				width: 27px;
+				height: 27px;
+				border-radius: 50%;
+				background: $grey;
+
+				.members_list__people_mess_num {
+					position: absolute;
+					z-index: 20;
+					top: -4px;
+					right: -2px;
+					width: 15px;
+					height: 15px;
+					border-radius: 50%;
+					background: $blue;
+					color: $white;
+					text-align: center;
+					line-height: 15px;
+					font-size: 8px;
+
+				}
+
+			}
+
+
+			.members_list__people_info {
+				width: 105px;
+				height: 20px;
+				margin-left: 10px;
+				@include flex(column, nowrap, space-between, flex-start);
+
+				.members_list__people_info_name {
+					width: 93px;
+					overflow: hidden;
+					line-height: 0.9;
+					color: $grey;
+				}
+
+				.members_list__people_info_last_message {
+					width: 93px;
+					overflow: hidden;
+					font-size: 8px;
+					line-height: 0.9;
+					color: blue //$inactive;
+				}
+
+			}
+
+			.members_list__people_status {
+				width: 25px;
+				height: 20px;
+				@include flex(column, nowrap, space-between, flex-end);
+
+				.members_list__people_online {
+					width: 6px;
+					height: 6px;
+					border-radius: 50%;
+					background: $grey;
+
+					&.online {
+						background: $blue;	
+					}
+
+				}
+
+				.members_list__people_ago {
+					font-size: 9px;
+					line-height: 0.9;
+					color:$inactive;
+
+				}
+
+			}
+
+			&.active {
+
+				.members_list__people_info_name {
+					color: $black;
+				}
+
+				.members_list__people_info_last_message {
+					color: $grey;
+				}
+
+			}
+
+
+		}
+
+	}
+
+
+}

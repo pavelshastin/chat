@@ -11,9 +11,17 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+	line-height: 0.9;
 }
 
+html, body {
+	width: 100%;
+	height: 100%;
+	background: #e7ecf2;
+	font-family: "Myriad Bold";
+	font-size: 11px;
 
+}
 
 a, a:active, a:visited, a:hover {
 	text-decoration: none;
@@ -25,58 +33,49 @@ li {
 
 .wrapper {
 	width: 100%;
-	//background: $grey;
+	height: 100%;
+	background: #e7ecf2;
 }
 
 
 
 .container {
-	max-width: 1280px;
+	max-width: 900px;
+	height: 100%;
 	margin: 0 auto;
-	@include flex(column, nowrap, flex-start, center)
+	background: #d8e8f5;
+	margin-top: 30px;
+	@include flex(column, nowrap, flex-start, flex-start)
+
+	.content_container {
+		width: 100%;
+		height: 100%;
+		@include flex(row, nowrap, flex-start, flex-start)
+	}
 
 }
 	
 
-div[class*='__buttons'] {
+.footer {
+	height: 50px;
 	width: 100%;
-	@include flex(column, nowrap, flex-start, center);
+	background: grey;
+	position: relative;
+	top: -50px;
 
-	*[class*='__buttons_'] {
-		font-family: "Myriad Bold";
-		display: block;
-		height: 60px;
-		padding: 16px 27px;
-		font-size: 24px; //changed 24px;
-		color: $grey;
-		background-color: $yellow;
-		border-radius: 8px;
-		box-shadow: 0px 3px 3px 0px #f15a24;
-		letter-spacing: 1px;
-		margin: 0;
-		border: none;
-		outline: none;
-
-		&:hover {
-			outline: none;
-			cursor: pointer;		
-		}
-
-		&.click {
-			box-shadow: 0px 1px 1px 0px #7e4a37;
-		}
+	&:hover {
+		cursor: pointer;
 	}
-
 }
 
 
-	@import "./includes/common_info.scss";
-	@import "./includes/price.scss";
-	@import "./includes/why.scss";
-	@import "./includes/service_form.scss";
-	@import "./includes/feedback.scss";
-	@import "./includes/feedback_form.scss";
-	@import "./includes/contacts.scss";
+	@import "./includes/header.scss";
+	@import "./includes/left_menu_sidebar.scss";
+	@import "./includes/members_list.scss";
+	@import "./includes/chat_content.scss";
+	@import "./includes/agenda.scss";
+	@import "./includes/footer.scss";
+	
 	
 
 

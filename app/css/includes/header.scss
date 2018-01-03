@@ -1,0 +1,81 @@
+﻿.header {
+	width: 100%;
+	height: 46px;
+	background: $blue;
+	@include flex (row, nowrap, space-between, center);
+
+	.header__menu_icon {
+		width: 18px;
+		height: 14px;
+		margin-left: 14px;
+		background: $icon;
+	}
+
+	.header__person_area {
+		@include flex(row, nowrap, flex-end, center);
+
+		.header__search {
+			@include flex(row, nowrap, flex-end, center);
+
+			.header__search_icon {
+				width: 16px;
+				height: 16px;
+				background: $icon;
+			}
+
+		}
+
+		.header__me {
+			@include flex(row, nowrap, flex-start, center);
+
+			.header__me_logo {
+				width: 28px;
+				height: 28px;
+				border-radius: 50%;
+				background: $icon;
+				margin: 0 15px;
+			}
+			
+			.header__me_name_area {
+				width: 140px;
+				@include flex(column, nowrap, flex-start, flex-start);
+
+				.header__me_name {
+					font-family: "Myriad Bold";
+					color: $white;
+					line-height: 12px;
+
+					.header__me_status {
+						width: 100%;
+						position: relative;
+
+						.header__me_status_cur {
+							font-family: "Myriad Bold";
+							color: $blueHard;
+							font-size: 9px;
+							
+						}
+
+						.header__me_status_icon {
+							position: absolute;
+							width: 7px;
+							height: 5px;
+							background: $blueHard;
+							top: 0px;
+							right: 0px;
+
+						}
+					
+
+					}
+
+				}
+
+				
+
+			}
+
+		}
+
+	}
+}
