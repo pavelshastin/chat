@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "g": "^2.0.1",
+    "mysql": "^2.15.0",
     "node-sass": "^4.7.2",
     "normalize.css": "^7.0.0"
   },

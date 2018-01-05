@@ -411,6 +411,7 @@ li {
 
 .chat_content {
   width: 365px;
+  height: 100%;
   margin-left: 20px;
   margin-top: 21px;
   background: transparent;
@@ -503,27 +504,28 @@ li {
         height: 18px;
         background: #9dafbd;
         margin-right: 7px; }
-  .chat_content .chat_content_messages {
+  .chat_content .chat_content_messages_cont {
     width: 100%;
-    height: 500px;
-    overflow-y: scroll;
-    margin-top: 18px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start; }
-    .chat_content .chat_content_messages .chat_content_message {
+    height: 100%;
+    overflow-y: hidden;
+    margin-top: 18px; }
+    .chat_content .chat_content_messages_cont .chat_content_messages {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+    .chat_content .chat_content_messages_cont .chat_content_message {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -540,7 +542,7 @@ li {
           -ms-flex-align: start;
               align-items: flex-start;
       margin-top: 10px; }
-      .chat_content .chat_content_messages .chat_content_message .chat_content_message_logo {
+      .chat_content .chat_content_messages_cont .chat_content_message .chat_content_message_logo {
         width: 27px;
         height: 27px;
         border-radius: 50%;
@@ -548,7 +550,8 @@ li {
         -webkit-box-ordinal-group: 2;
             -ms-flex-order: 1;
                 order: 1; }
-      .chat_content .chat_content_messages .chat_content_message .chat_content_message_text {
+      .chat_content .chat_content_messages_cont .chat_content_message .chat_content_message_text {
+        position: relative;
         max-width: 230px;
         border-radius: 13px;
         padding: 10px;
@@ -560,18 +563,28 @@ li {
         -webkit-box-ordinal-group: 3;
             -ms-flex-order: 2;
                 order: 2; }
-      .chat_content .chat_content_messages .chat_content_message:first-child {
+        .chat_content .chat_content_messages_cont .chat_content_message .chat_content_message_text:before {
+          content: "";
+          position: absolute;
+          top: 10px;
+          left: -5px;
+          z-index: 0;
+          width: 12px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ffffff; }
+      .chat_content .chat_content_messages_cont .chat_content_message:first-child {
         margin-top: 0; }
-      .chat_content .chat_content_messages .chat_content_message.right {
+      .chat_content .chat_content_messages_cont .chat_content_message.right {
         -webkit-box-pack: end;
             -ms-flex-pack: end;
                 justify-content: flex-end;
         margin-left: auto; }
-        .chat_content .chat_content_messages .chat_content_message.right .chat_content_message_logo {
+        .chat_content .chat_content_messages_cont .chat_content_message.right .chat_content_message_logo {
           -webkit-box-ordinal-group: 3;
               -ms-flex-order: 2;
                   order: 2; }
-        .chat_content .chat_content_messages .chat_content_message.right .chat_content_message_text {
+        .chat_content .chat_content_messages_cont .chat_content_message.right .chat_content_message_text {
           -webkit-box-ordinal-group: 2;
               -ms-flex-order: 1;
                   order: 1;
@@ -579,6 +592,10 @@ li {
           margin-left: 0;
           background: #3598db;
           color: #ffffff; }
+          .chat_content .chat_content_messages_cont .chat_content_message.right .chat_content_message_text:before {
+            background: #3598db;
+            left: auto;
+            right: -5px; }
   .chat_content form.chat_content_addnew {
     position: relative;
     top: -55px;

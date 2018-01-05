@@ -1,6 +1,6 @@
 ﻿.chat_content {
 	width: 365px;
-	//height: 100%;
+	height: 100%;
 	margin-left: 20px;
 	margin-top: 21px;
 	background: transparent;
@@ -57,17 +57,21 @@
 	}
 
 
-	.chat_content_messages {
+	.chat_content_messages_cont {
 		width: 100%;
-		height: 500px;
-		overflow-y: scroll;
-		
+		height: 100%;
+		overflow-y: hidden;
 		margin-top: 18px;
-		@include flex(column, nowrap, flex-start, flex-start);
+		
+
+		.chat_content_messages {
+			@include flex(column, nowrap, flex-start, flex-start);
+		}
 
 		.chat_content_message {
 			@include flex(row, nowrap, flex-start, flex-start);
 			margin-top: 10px;
+			
 			
 
 			.chat_content_message_logo {
@@ -79,6 +83,7 @@
 			}
 
 			.chat_content_message_text {
+				position: relative;
 				max-width: 230px;
 				border-radius: 13px;
 				padding: 10px;
@@ -88,6 +93,18 @@
 				margin-left: 18px;
 				background: $white;
 				order: 2;
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 10px;
+					left: -5px;
+					z-index: 0;
+					width: 12px;
+					height: 10px;
+					border-radius: 50%;
+					background: $white;
+				}
 			}
 
 			&:first-child {
@@ -109,8 +126,17 @@
 					margin-left: 0;
 					background: $blue;
 					color: $white;
+
+					&:before {
+						background: $blue;
+						left: auto;
+						right: -5px;
+					}
 				}
 			}
+
+
+			
 		}
 
 
